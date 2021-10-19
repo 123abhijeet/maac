@@ -54,23 +54,10 @@
                         <!--Right Start-->
 						<div class="col-lg-auto col-12 d-flex justify-content-center">
                             <ul class="header-top-menu">
-                                <li class="dropdown">
-                                    <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle">GBP</a>
-                                    <ul class="dropdown-menu header-top-dropdown">
-										<li><a href="#">Dollar (USD)</a></li>
-										<li><a href="#">Pound (GBP)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle">English</a>
-                                    <ul class="dropdown-menu header-top-dropdown">
-										<li><a href="#">English</a></li>
-										<li><a href="#">Arabic(Arabic)</a></li>
-                                    </ul>
-                                </li>
                                 <li><a href="{{route('myaccount')}}"><i class="fa fa-user"></i>My account</a></li>
                                 <li><a href="{{route('wishlist')}}"><i class="fa fa-heart"></i>My wishlist</a></li>
-                                <li><a href="login-register.html"><i class="fa fa-unlock-alt"></i>Sign in</a></li>
+                                <li><a href="{{route('login')}}"><i class="fa fa-unlock-alt"></i>Sign in</a></li>
+                                <li><a href="{{route('register')}}"><i class="fa fa-unlock-alt"></i>Sign Up</a></li>
                                 <li><a href="{{route('checkout')}}"><i class="fa fa-share-square-o"></i>Check out</a></li>
                             </ul>
 						</div><!--Right End-->
