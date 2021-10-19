@@ -5,7 +5,7 @@
         <div class="breadcrumbs-area">
             <div class="container">
                 <ul class="breadcrumbs">
-                    <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="{{route('index')}}"><i class="fa fa-home"></i>Home</a></li>
                     <li class="active">Register</li>
                 </ul>
             </div>
@@ -66,6 +66,8 @@
                                 </div>
                                 <div class="col-12 mb-20">					
                                     <button type="submit" class="btn">Sign up</button>
+                                    <span>Already registered?</span>
+                                    <a href="{{route('login')}}" class="btn">Sign In</a>	
                                 </div>
                             </div>
                         </form>

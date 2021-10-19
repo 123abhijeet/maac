@@ -50,14 +50,22 @@
 								<p>Default Welcome Msg!</p>
 							</div>
 						</div><!--Left End-->
-						
+						<!-- <a href=""><i class="fa fa-sign-out"></i>Logout</a> -->
                         <!--Right Start-->
 						<div class="col-lg-auto col-12 d-flex justify-content-center">
                             <ul class="header-top-menu">
                                 <li><a href="{{route('myaccount')}}"><i class="fa fa-user"></i>My account</a></li>
                                 <li><a href="{{route('wishlist')}}"><i class="fa fa-heart"></i>My wishlist</a></li>
+                                @if(Auth::user())
+                                <li><a href=""><i class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
+                                <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <li> <button type="submit" class="dropdown-item"><i class="fa fa-sign-out"></i> Sign out</button></li>
+                                </form>
+                                @else
                                 <li><a href="{{route('login')}}"><i class="fa fa-unlock-alt"></i>Sign in</a></li>
                                 <li><a href="{{route('register')}}"><i class="fa fa-unlock-alt"></i>Sign Up</a></li>
+                                @endif
                                 <li><a href="{{route('checkout')}}"><i class="fa fa-share-square-o"></i>Check out</a></li>
                             </ul>
 						</div><!--Right End-->
@@ -74,7 +82,7 @@
                        
                         <!--Logo Start-->
                         <div class="header-logo col-auto">
-                            <a href="{{route('index')}}"><img src="{{asset('customer/images/logo.webp')}}" alt="Logo"></a>
+                            <a href="{{route('index')}}"><img src="{{asset('customer/logo.png')}}" alt="Logo" height="20px"></a>
                         </div><!--Logo End-->
 						
                         <!--Main Menu Start-->

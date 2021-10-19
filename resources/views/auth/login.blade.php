@@ -5,7 +5,7 @@
         <div class="breadcrumbs-area">
             <div class="container">
                 <ul class="breadcrumbs">
-                    <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="{{route('index')}}"><i class="fa fa-home"></i>Home</a></li>
                     <li class="active">Login</li>
                 </ul>
             </div>
@@ -53,7 +53,9 @@
                             </div>
 
                                 <div class="col-12 mb-20">					
-                                    <button type="submit" class="btn">Sign In</button>
+                                    <button type="submit" class="btn">Sign In</button>		
+                                    <span>Not a member?</span>
+                                    <a href="{{route('register')}}" class="btn">Sign up</a>	
                                 </div>
                                 <div class="col-12 align-self-end mb-20">
                                 @if (Route::has('password.request'))

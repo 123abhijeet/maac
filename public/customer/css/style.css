@@ -67,6 +67,9 @@ a:focus {
 img {
     max-width:100%;height:auto
 }
+.footer-img{
+    max-width: 60%;
+}
 p:last-child {
     margin-bottom: 0;
 }
@@ -542,7 +545,7 @@ input[type="submit"]:hover {
     display: block;
 }
 .header-logo a img {
-    max-width: 100%;
+    max-width: 60%;
 }
 
 /*Main Menu*/

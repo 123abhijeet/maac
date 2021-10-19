@@ -107,7 +107,7 @@
 		            <div class="row mb-n25">
 		                <div class="footer-border-right col-lg-5 col-12 mb-25">
 		                    <div class="footer-middle-content">
-		                        <a href="{{route('index')}}"><img src="{{asset('customer/images/logo_footer.webp')}}" alt=""></a>
+		                        <a href="{{route('index')}}"><img src="{{asset('customer/logo.png')}}" alt="" class="footer-img"></a>
 		                        <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit.</p>
 		                        <div class="social-icon">
 		                            <ul>
