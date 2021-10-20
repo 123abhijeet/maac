@@ -104,6 +104,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Orders
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
