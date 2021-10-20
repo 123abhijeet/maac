@@ -40,6 +40,14 @@ class CustomerController extends Controller
     {
         return view('Customer.aboutus');
     }
+    public function productdetails()
+    {
+        return view('Customer.productdetails');
+    }
+    public function shop()
+    {
+        return view('Customer.shop');
+    }
     public function dashboard()
     {
         return view('Customer.index');

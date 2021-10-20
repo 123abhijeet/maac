@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/',[CustomerController::class,'index'])->name('index');
 Route::get('/contact',[CustomerController::class,'contact'])->name('contact');
 Route::get('/about',[CustomerController::class,'about'])->name('about');
+Route::get('/shop',[CustomerController::class,'shop'])->name('shop');
+Route::get('/product-details',[CustomerController::class,'productdetails'])->name('product.details');
 // Route::get('/my-account',[CustomerController::class,'myaccount'])->name('myaccount');
 // Route::get('/my-wishlist',[CustomerController::class,'wishlist'])->name('wishlist');
 // Route::get('/checkout',[CustomerController::class,'checkout'])->name('checkout');
@@ -36,5 +39,11 @@ Route::prefix('customer')->middleware('auth','prevent-back-history')->group(func
 
 Route::prefix('admin')->middleware('is_admin')->group(function () {
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.home');
+    Route::get('/add-category',[CategoryController::class,'addcategory'])->name('add.category');
+    Route::get('/all-category',[CategoryController::class,'allcategory'])->name('all.category');
+    Route::post('/store-category',[CategoryController::class,'store'])->name('store.category');
+    Route::get('/edit-category/{id}',[CategoryController::class,'edit'])->name('edit.category');
+    Route::post('/update-category{id}',[CategoryController::class,'update'])->name('update.category');
+    Route::get('/delete-category/{id}',[CategoryController::class,'destroy'])->name('delete.category');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

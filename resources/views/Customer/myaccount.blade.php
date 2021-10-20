@@ -193,7 +193,7 @@
 
                                         <div class="col-12 mb-30">
                                             <input id="current-pwd" placeholder="Current Password" type="password"
-                                                name="current_password" value="{{ old('current_password')}}">
+                                                name="current_password" value="{{ old('password')}}">
                                             @error('current_password')
                                             <span style="color:red">{{ $message }}</span>
                                             @enderror
