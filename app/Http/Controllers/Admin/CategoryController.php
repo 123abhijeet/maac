@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'status' => $request->status,
             'description' => $request->description,
         ]);
-        return redirect()->back()->with("success", "Category Added Successfully !");
+        return back()->with("success", "Category Added Successfully !");
     }
     /**
      * Show the form for editing the specified resource.

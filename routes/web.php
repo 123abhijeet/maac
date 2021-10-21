@@ -46,6 +46,7 @@ Route::prefix('admin')->middleware('is_admin')->group(function () {
     Route::get('/edit-category/{id}',[CategoryController::class,'edit'])->name('edit.category');
     Route::post('/update-category{id}',[CategoryController::class,'update'])->name('update.category');
     Route::get('/delete-category/{id}',[CategoryController::class,'destroy'])->name('delete.category');
+    Route::get('/add-fields',[ProductController::class,'addfields'])->name('add.fields');
     Route::get('/add-product',[ProductController::class,'addproduct'])->name('add.product');
     Route::get('/all-product',[ProductController::class,'allproduct'])->name('all.product');
 

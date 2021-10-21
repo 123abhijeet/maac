@@ -5,16 +5,6 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-        @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -45,31 +35,30 @@
                         <!-- form start -->
                         <form action="" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                            @if (Session::has('success'))
+                            <div class="alert alert-success text-center">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                <p>{{ Session::get('success') }}</p>
+                            </div>
+                            @endif
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Product Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Enter Category Name" required>
-                                </div>
-                                <div class="form-group">
                                     <label for="exampleInputEmail1">Product Category</label>
-                                   <select name="">
-                                       <option value="">Sofas</option>
-                                       <option value="">Beds</option>
-                                   </select>
-                                </div>
-                               
-                                <div class="form-group">
-                                    <label>Status :-</label> &nbsp;
-                                    <input type="radio" name="status" id="active" value="active" checked>
-                                    <label for="active">Active </label>&nbsp;
-                                    <input type="radio" name="status" id="inactive" value="inactive">
-                                    <label for="inactive">Inactive</label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Description :-</label>
-                                    <textarea class="form-control" name="description" id="description"
-                                        placeholder="Description"></textarea>
+                                    <select class="form-control" name="" id="category_name">
+                                        <option value="">Choose Category</option>
+                                        @foreach($category as $categorydata)
+                                        <option value="{{$categorydata->name}}">{{$categorydata->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -83,4 +72,13 @@
         </div>
     </section>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#category_name").change(function() {
+        var category_name = $("#category_name").val();
+
+    });
+});
+</script>
 @endsection

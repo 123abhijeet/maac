@@ -67,13 +67,13 @@
                               <a href="{{route('all.category')}}"
                                   class="nav-link  @if($active=='allcategory') active @endif">
                                   <i class="far fa-circle nav-icon"></i>
-                                  <p>All Category</p>
+                                  <p>List Category</p>
                               </a>
                           </li>
                       </ul>
                   </li>
 
-                  <li class="nav-item has-treeview @if($active=='addproduct' || $active=='allproduct') menu-open @endif">
+                  <li class="nav-item has-treeview @if($active=='addfields' || $active=='addproduct' || $active=='allproduct') menu-open @endif">
                       <a href="#" class="nav-link">
                           <i class="nav-icon"></i>
                           <p>
@@ -83,6 +83,12 @@
                       </a>
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
+                              <a href="{{route('add.fields')}}" class="nav-link @if($active=='addfields') active @endif">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Add Fields</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
                               <a href="{{route('add.product')}}" class="nav-link @if($active=='addproduct') active @endif">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Add Product</p>
@@ -91,13 +97,7 @@
                           <li class="nav-item">
                               <a href="{{route('all.product')}}" class="nav-link @if($active=='allproduct') active @endif">
                                   <i class="far fa-circle nav-icon"></i>
-                                  <p>All Products</p>
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a href="" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Featured Products</p>
+                                  <p>List Products</p>
                               </a>
                           </li>
                       </ul>

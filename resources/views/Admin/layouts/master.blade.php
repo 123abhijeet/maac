@@ -1,4 +1,5 @@
 @include('Admin.layouts.header')
 @include('Admin.layouts.aside')
+@include('sweetalert::alert')
 @yield('body')
 @include('Admin.layouts.footer')

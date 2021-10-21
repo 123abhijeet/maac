@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Admin\Category;
 
 class ProductController extends Controller
 {
@@ -12,10 +13,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addfields()
+    {
+        $active='addfields';
+        $category=Category::where('status','active')->get();
+        return view('Admin.addfields',compact('active','category'));
+    }
     public function addproduct()
     {
         $active='addproduct';
-        return view('Admin.addproduct',compact('active'));
+        $category=Category::where('status','active')->get();
+        return view('Admin.addproduct',compact('active','category'));
     }
     public function allproduct()
     {

@@ -58,6 +58,12 @@
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script>
+  $("document").ready(function(){
+    setTimeout(function(){
+       $("div.alert").remove();
+    }, 3000 ); // 3 secs
+
+});
 $(function() {
     $("#example1").DataTable({
         "responsive": true,
