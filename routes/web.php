@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +46,8 @@ Route::prefix('admin')->middleware('is_admin')->group(function () {
     Route::get('/edit-category/{id}',[CategoryController::class,'edit'])->name('edit.category');
     Route::post('/update-category{id}',[CategoryController::class,'update'])->name('update.category');
     Route::get('/delete-category/{id}',[CategoryController::class,'destroy'])->name('delete.category');
-    Route::get('/add-product',[])
+    Route::get('/add-product',[ProductController::class,'addproduct'])->name('add.product');
+    Route::get('/all-product',[ProductController::class,'allproduct'])->name('all.product');
+
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -9,6 +9,7 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('Admin.index');
+        $active='dashboard';
+        return view('Admin.index',compact('active'));
     }
 }

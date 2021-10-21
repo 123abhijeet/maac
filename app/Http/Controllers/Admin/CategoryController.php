@@ -16,12 +16,14 @@ class CategoryController extends Controller
      */
     public function addcategory()
     {
-        return view('Admin.addcategory');
+        $active='addcategory';
+        return view('Admin.addcategory',compact('active'));
     }
     public function allcategory()
     {
+        $active='allcategory';
         $category = Category::all();
-        return view('Admin.allcategory',compact('category'));
+        return view('Admin.allcategory',compact('category','active'));
     }
     /**
      * Store a newly created resource in storage.
@@ -53,8 +55,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $active='editcategory';
         $category = Category::find($id);
-        return view('Admin.editcategory',compact('category'));
+        return view('Admin.editcategory',compact('category','active'));
     }
 
     /**

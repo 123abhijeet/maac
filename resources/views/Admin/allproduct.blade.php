@@ -1,5 +1,5 @@
 @extends('Admin.layouts.master')
-@section('title','Modern Art And Crafts | All Category')
+@section('title','Modern Art And Crafts | All Products')
 @section('body')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -23,7 +23,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Category</li>
+                        <li class="breadcrumb-item active">Products</li>
                     </ol>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">All Category</h3>
+                            <h3 class="card-title">All Products</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -45,7 +45,7 @@
                                 <thead>
                                     <tr>
                                         <th>S. No</th>
-                                        <th>Category Name</th>
+                                        <th>Product Name</th>
                                         <th>Status</th>
                                         <th>Description</th>
                                         <th>Category Image</th>
@@ -53,22 +53,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($category as $key=>$categorydata)
                                     <tr>
-                                        <td>{{++$key}}</td>
-                                        <td>{{$categorydata->name}}</td>
-                                        <td>{{$categorydata->status}}</td>
-                                        <td>{{$categorydata->description}}</td>
-                                        <td><img src="{{ asset('storage/'.$categorydata->image)}}" width="200px"
-                                                height="80px"></td>
-                                        <td><a href="{{route('edit.category',$categorydata->id)}}"><i
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href=""><i
                                                     class="fas fa-edit"></i></a>&nbsp;
                                             <a onclick="return confirm('Are you sure want to delete?')"
-                                                href="{{route('delete.category',$categorydata->id)}}"><i
+                                                href=""><i
                                                     class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
-                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>

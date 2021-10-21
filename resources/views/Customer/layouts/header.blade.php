@@ -16,7 +16,7 @@
         rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('customer/images/favicon.webp')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('customer/logo.png')}}">
 
     <!-- CSS
         ============================================ -->
