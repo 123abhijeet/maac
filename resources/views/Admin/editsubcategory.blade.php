@@ -58,7 +58,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Sub Category Name <?php echo $subcategory->id;?> :-</label>
+                                    <label for="">Sub Category Name :-</label>
                                     <input type="text" name="subcategory_name" class="form-control" Placeholder="Enter Sub Category Name" value="{{$subcategory->subcategory_name}}" required>
                                 </div>
                                 <div class="form-group">

@@ -100,7 +100,7 @@ class SubcategoryController extends Controller
                 File::delete("storage/".$pic);
             }
             Subcategory::where('id', $id)->update([
-                'category_name' => $request->category_name,
+                'category_id' => $request->category_id,
                 'subcategory_name' => $request->subcategory_name,
                 'image' => $request->image->store('Subcategory/Images','public'),
                 'status' => $request->status,
@@ -109,7 +109,7 @@ class SubcategoryController extends Controller
             return redirect()->route('all.subcategory')->with("success", "Subcategory Updated Successfully !");
         }else{
             Subcategory::where('id', $id)->update([
-                'category_name' => $request->category_name,
+                'category_id' => $request->category_id,
                 'subcategory_name' => $request->subcategory_name,
                 'status' => $request->status,
                 'description' => $request->description,
