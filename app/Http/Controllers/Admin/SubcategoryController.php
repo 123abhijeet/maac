@@ -22,7 +22,8 @@ class SubcategoryController extends Controller
     {
         $active='allsubcategory';
         $subcategory = Subcategory::join('categories', 'subcategories.category_id', '=', 'categories.id')
-               ->get(['subcategories.*', 'categories.*']);
+               ->get(['subcategories.*', 'categories.name']);
+        //dd($subcategory);
         return view('Admin.allsubcategory',compact('subcategory','active'));
     }
     /**
