@@ -21,9 +21,8 @@ class SubcategoryController extends Controller
     public function allsubcategory()
     {
         $active='allsubcategory';
-        $subcategory = DB::table('subcategories')
-        ->join('categories','subcategories.category_id','=','categories.id')
-        ->get();
+        $subcategory = Subcategory::join('categories', 'subcategories.category_id', '=', 'categories.id')
+               ->get(['subcategories.*', 'categories.*']);
         return view('Admin.allsubcategory',compact('subcategory','active'));
     }
     /**
@@ -73,7 +72,6 @@ class SubcategoryController extends Controller
         $active='editsubcategory';
         $category = Category::all();
         $subcategory = Subcategory::find($id);
-        dd($subcategory->id);
         return view('Admin.editsubcategory',compact('category','subcategory','active'));
     }
 
