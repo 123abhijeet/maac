@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Category;
 use File;
+use Validator;
 
 class CategoryController extends Controller
 {
@@ -33,12 +34,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $validator = Validator::make($request->all(),[
             'name' => 'required',
             'image' => 'file|required',
             'status' => 'required',
-            'description' => 'max:200',
         ]);
+        if($validator->fails()){
+            return back()->with("error", $validator->errors());
+        }
         Category::create([
             'name' => $request->name,
             'image' => $request->image->store('Category/Images','public'),
@@ -69,6 +72,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'status' => 'required',
+        ]);
+        if($validator->fails()){
+            return back()->with("error", $validator->errors());
+        }
         $data = Category::find($id);
         $pic = $data->image;
         if($request->image){
